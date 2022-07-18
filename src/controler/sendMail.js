@@ -8,7 +8,7 @@ const sendMail = async (req, res) => {
   const info = await transporter.sendMail({
     from: '"Hamburg Athletics" <demo@hamburg-athletics.eu>',
     to,
-    subject: subject || "No Subject",
+    subject,
     text,
   });
 

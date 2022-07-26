@@ -1,6 +1,5 @@
 import config from "../config.js";
 import nodemailer from "nodemailer";
-// import hbs from "nodemailer-express-handlebars";
 
 const sendMail = async (req, res) => {
   const { to, subject, text } = req.body;

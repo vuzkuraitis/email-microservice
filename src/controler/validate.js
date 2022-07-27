@@ -5,6 +5,7 @@ const mailSchema = Joi.object({
   to: Joi.string().email().required(),
   subject: Joi.string(),
   text: Joi.string().required(),
+  html: Joi.string().required(),
 });
 
 const validate = async (req, res, next) => {

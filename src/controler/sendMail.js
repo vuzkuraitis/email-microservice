@@ -2,7 +2,7 @@ import config from "../config.js";
 import nodemailer from "nodemailer";
 
 const sendMail = async (req, res) => {
-  const { to, subject, text, html } = req.body;
+  const { to, subject, text, html, attachments } = req.body;
   const transporter = nodemailer.createTransport(config.mailConfig);
 
   const info = await transporter.sendMail({
@@ -11,6 +11,7 @@ const sendMail = async (req, res) => {
     subject,
     text,
     html,
+    attachments,
   });
 
   return res.send({ msg: `Email sent`, id: info.messageId });

@@ -2,7 +2,7 @@ import config from "../config.js";
 import nodemailer from "nodemailer";
 
 const sendMail = async (req, res) => {
-  const { to, subject, text } = req.body;
+  const { to, subject, text, html } = req.body;
   const transporter = nodemailer.createTransport(config.mailConfig);
 
   const info = await transporter.sendMail({
@@ -10,7 +10,7 @@ const sendMail = async (req, res) => {
     to,
     subject,
     text,
-    html: req.body.html + '<img src="cid:logo" style="width: 200px"/>',
+    html,
     attachments: [
       {
         filename: "logo.jpeg",

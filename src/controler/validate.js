@@ -4,7 +4,6 @@ const mailSchema = Joi.object({
   auth: Joi.string().required(),
   to: Joi.string().email().required(),
   subject: Joi.string(),
-  text: Joi.string().required(),
   html: Joi.string().required(),
 });
 

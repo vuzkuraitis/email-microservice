@@ -11,6 +11,7 @@ const sendMail = async (req, res) => {
     subject,
     text,
     html,
+    attachments,
   });
 
   return res.send({ msg: `Email sent`, id: info.messageId });
